@@ -1,5 +1,7 @@
 # init-reactJS-Bootstrap
-Start point for using Bootstrap with react JS.
+Start point for using Bootstrap with react JS. This project is using the Bootstrap template SB ADmin 2 from https://startbootstrap.com/themes/sb-admin-2/ by dividing it in React componentes in order to start working and using it from a simple project.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
