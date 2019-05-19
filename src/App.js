@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import Content from './components/Content'
-import SideBar from './components/SideBar'
+import SideBar from './components/sidebar/SideBar'
 import ScrollToTop from './components/ScrollToTop'
 
 class App extends Component {
 
   render() {
+
+    const titleBar = <div>SB Admin <sup>2</sup></div>;
     return (
       <div className="App" id="wrapper">
-        <SideBar />
+        <SideBar titleBar={titleBar} />
         <Content />
         <ScrollToTop reference="#page-top" />
         <div className="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
