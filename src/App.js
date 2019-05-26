@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import Content from './components/Content'
-import SideBar from './components/sidebar/SideBar'
+import Sidebar from './components/sidebar/Sidebar'
 import ScrollToTop from './components/ScrollToTop'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Content from './pages/Content';
+import Dashboard from './pages/Dashboard';
+import Charts from './pages/Charts';
+import NotFound from './pages/NotFound';
 
 class App extends Component {
 
@@ -10,8 +14,18 @@ class App extends Component {
     const titleBar = <div>SB Admin <sup>2</sup></div>;
     return (
       <div className="App" id="wrapper">
-        <SideBar titleBar={titleBar} />
-        <Content />
+        <Sidebar titleBar={titleBar} />
+        <Content>
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/" component={Dashboard} />
+              <Route exact path="/dashboard" component={Dashboard} />
+              <Route exact path="/index" component={Dashboard} />
+              <Route exact path="/charts" component={Charts} />
+              <Route exact path="/404" component={NotFound} />
+            </Switch>
+          </BrowserRouter>
+        </Content>
         <ScrollToTop reference="#page-top" />
         <div className="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog" role="document">
